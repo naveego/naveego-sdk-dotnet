@@ -16,7 +16,12 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.0.100 
+        dotnet-version: 3.0.100
+
+    - name: Generate build number
+      uses: einaregilsson/build-number@v1
+      with:
+        token: ${{secrets.github_token}}
         
     - name: Install Protoc
       uses: Arduino/actions/setup-protoc@master
