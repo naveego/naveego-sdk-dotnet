@@ -4,9 +4,7 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v1
     - uses: actions/checkout@v1
@@ -21,7 +19,41 @@ jobs:
         
     - name: Install Protoc
       uses: Arduino/actions/setup-protoc@master
-      
+    
+    - name: Setup Build Env
+      id: buildenv
+      run: ./buildenv.sh
+               
     - name: Build with dotnet
       working-directory: src
-      run: dotnet build --configuration Release
+      run: ./build.sh
+                
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: library
+        path: bin
+      
+  publish:
+    needs: build
+    if: github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master'
+    steps:
+    - name: Install NuGet client
+      uses: warrenbuckley/Setup-Nuget@v1
+      
+    - name: Download Artifacts
+      uses: actions/download-artifact@v1
+        with:
+          name: library
+          path: bin
+          
+    - name: Add private GitHub registry to NuGet
+      run: nuget sources add -name "GitHub" -Source https://nuget.pkg.github.com/naveego/index.json -Username naveego -Password ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Push Generated Package
+      run: nuget push ./bin/*.nupkg -Source "GitHub" -SkipDuplicate
+    
+  
+          
+      
+    
