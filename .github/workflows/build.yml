@@ -54,13 +54,13 @@ jobs:
       with:
         name: library
         path: bin
-    - run: dir
-      working-directory: bin
+
     - name: Add private GitHub registry to NuGet
       run: nuget sources add -name "GitHub" -Source https://nuget.pkg.github.com/naveego/index.json -Username naveego -Password ${{ secrets.GITHUB_TOKEN }}
 
     - name: Push Generated Package
-      run: nuget push bin\\*.nupkg -Source "GitHub" -SkipDuplicate
+      working-directory: bin
+      run: nuget push *.nupkg -Source "GitHub" -SkipDuplicate
     
   
           
