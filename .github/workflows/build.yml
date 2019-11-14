@@ -59,7 +59,7 @@ jobs:
       run: nuget sources add -name "GitHub" -Source https://nuget.pkg.github.com/naveego/index.json -Username naveego -Password ${{ secrets.GITHUB_TOKEN }}
 
     - name: Push Generated Package
-      run: nuget push bin/*.nupkg -Source "GitHub" -SkipDuplicate
+      run: nuget push bin/library/*.nupkg -Source "GitHub" -SkipDuplicate
     
   
           
