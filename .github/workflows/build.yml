@@ -23,4 +23,5 @@ jobs:
       uses: Arduino/actions/setup-protoc@master
       
     - name: Build with dotnet
+      working-directory: src
       run: dotnet build --configuration Release
