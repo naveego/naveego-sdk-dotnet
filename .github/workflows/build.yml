@@ -48,9 +48,9 @@ jobs:
       
     - name: Download Artifacts
       uses: actions/download-artifact@v1
-        with:
-          name: library
-          path: bin
+      with:
+        name: library
+        path: bin
           
     - name: Add private GitHub registry to NuGet
       run: nuget sources add -name "GitHub" -Source https://nuget.pkg.github.com/naveego/index.json -Username naveego -Password ${{ secrets.GITHUB_TOKEN }}
