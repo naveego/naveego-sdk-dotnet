@@ -25,6 +25,7 @@ jobs:
     
     - name: Generate Publisher from ProtoBuf
       run: |
+        ls -l
         echo 'option csharp_namespace = "Naveego.Plugin.Sdk";' >> dataflow-contracts/plugins/publisher.proto
         protoc -I=./ --csharp_out=src --csharp_opt=file_extension=.g.cs publisher.proto 
 
