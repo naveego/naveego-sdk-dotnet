@@ -59,9 +59,7 @@ jobs:
 
     - name: Push Generated Package
       working-directory: bin
-      env:
-        NUGET_KEY: ${{ secrets.NUGET_KEY }}
-      run: dotnet nuget push -k ${NUGET_KEY}
+      run: dotnet nuget push -k ${{ secrets.NUGET_KEY }}
     
   
           
