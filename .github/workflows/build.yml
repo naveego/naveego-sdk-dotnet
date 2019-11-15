@@ -46,21 +46,22 @@ jobs:
     needs: build
     if: github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master'
     steps:
-    - name: Install NuGet client
-      uses: warrenbuckley/Setup-Nuget@v1
-      
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.0.100
+        
     - name: Download Artifacts
       uses: actions/download-artifact@v1
       with:
         name: library
         path: bin
 
-    - name: Add private GitHub registry to NuGet
-      run: nuget sources add -name "GitHub" -Source https://nuget.pkg.github.com/naveego/index.json -Username naveego -Password ${{ secrets.GITHUB_TOKEN }}
-
     - name: Push Generated Package
       working-directory: bin
-      run: nuget push *.nupkg -Source "GitHub" -SkipDuplicate
+      env:
+        NUGET_KEY: ${{ secrets.NUGET_KEY }}
+      run: dotnet nuget push -k ${NUGET_KEY}
     
   
           

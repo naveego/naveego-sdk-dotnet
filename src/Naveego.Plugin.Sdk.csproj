@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.0</TargetFramework>
-         <PackageId>plugin-sdk-dotnet</PackageId>
+         <PackageId>Naveego.Plugin.Sdk</PackageId>
          <Authors>Derek Smith</Authors>
          <Company>Naveego</Company>
     </PropertyGroup>
