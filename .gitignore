@@ -291,6 +291,8 @@ bin/
 
 obj/
 
+*.g.cs
+
 
 .DS_Store
 
