@@ -42,7 +42,7 @@ jobs:
         path: bin
       
   publish:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     needs: build
     if: github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master'
     steps:
@@ -59,10 +59,7 @@ jobs:
 
     - name: Push Generated Package
       working-directory: bin
-      env:
-        NUGET_KEY: ${{ secrets.NUGET_KEY }}
-      run: dotnet nuget push -k ${NUGET_KEY}
-    
+      run: dotnet nuget push *.nupkg -k ${{ secrets.NUGET_KEY }} -s https://api.nuget.org/v3/index.json
   
           
       
