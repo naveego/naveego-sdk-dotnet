@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.0</TargetFramework>
-         <PackageId>Naveego.Plugin.Sdk</PackageId>
+         <PackageId>Naveego.Sdk</PackageId>
          <Authors>Derek Smith</Authors>
          <Company>Naveego</Company>
     </PropertyGroup>
@@ -14,7 +14,11 @@
     </ItemGroup>
     
     <ItemGroup>
-        <Protobuf Include="../publisher.proto" Link="publisher.proto" />
+        <Protobuf Include="../publisher.proto" Link="Protos/publisher.proto" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <Folder Include="Protos" />
     </ItemGroup>
 
 </Project>
