@@ -1,11 +1,8 @@
 #!/usr/bin/env bash
 
 
-if [[ -z "$BUILD_NUMBER" ]]; then 
-    echo "BUILD_NUMBER not set"
-    echo "You must set the BUILD_NUMBER environment variable to use this script"
-    exit 1
-fi
+# Changes sequentially every 100 seconds
+buildNumber=`expr $(date +%s) / 100`
 
 function semverParseInto() {
     local RE='[^0-9]*\([0-9]*\)[.]\([0-9]*\)[.]\([0-9]*\)\([0-9A-Za-z-]*\)'
@@ -24,8 +21,6 @@ if [[ -f "./bin" ]]; then
     rm -rf ./bin
 fi
 
-branch=$(git symbolic-ref --short HEAD)
-
 if [[ -f "version" ]]; then 
     version=`cat version`
 else
@@ -43,20 +38,22 @@ if [[ -z "$SPECIAL" ]]; then
     dotnet pack --configuration Release -o ./bin \
         -p:Version="${MAJOR}.${MINOR}.${PATCH}" \
         -p:InformationalVersion="${versionNumber} (${buildDate})" \
-        ./src/Naveego.Plugin.Sdk.sln
+        ./src/Naveego.Sdk.sln
          
 else 
-    versionNumber="${MAJOR}.${MINOR}.${PATCH}${SPECIAL}.${BUILD_NUMBER}+${buildDate}"
+    versionNumber="${MAJOR}.${MINOR}.${PATCH}${SPECIAL}.${buildNumber}+${buildDate}"
     
     dotnet pack --configuration Release -o ./bin \
         -p:VersionPrefix="${MAJOR}.${MINOR}.${PATCH}" \
-        -p:VersionSuffix="${SPECIAL:1}.${BUILD_NUMBER}" \
+        -p:VersionSuffix="${SPECIAL:1}.${buildNumber}" \
         -p:InformationalVersion="${versionNumber}" \
-        ./src/Naveego.Plugin.Sdk.sln
+        ./src/Naveego.Sdk.sln
 fi
 
 status=$?
 
-echo "Successfully Build Plugin SDK ($versionNumber)"
-
-[[ ${status} -eq 0 ]]  || exit 1
+if [[ ${status} -eq 0 ]]; then
+    echo "Successfully Build Plugin SDK ($versionNumber)"
+else 
+    exit 1
+fi

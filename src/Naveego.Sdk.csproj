@@ -14,11 +14,16 @@
     </ItemGroup>
     
     <ItemGroup>
-        <Protobuf Include="../publisher.proto" Link="Protos/publisher.proto" />
-    </ItemGroup>
-    
-    <ItemGroup>
-      <Folder Include="Protos" />
+      <Protobuf Include="..\publisher.proto">
+        <GrpcServices>Both</GrpcServices>
+        <Access>Public</Access>
+        <ProtoCompile>True</ProtoCompile>
+        <ProtoRoot></ProtoRoot>
+        <CompileOutputs>True</CompileOutputs>
+        <OutputDir>obj\Debug\netcoreapp3.0\</OutputDir>
+        <Generator>MSBuild:Compile</Generator>
+        <Link>Plugins\publisher.proto</Link>
+      </Protobuf>
     </ItemGroup>
 
 </Project>
