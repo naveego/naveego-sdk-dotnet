@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -ex
+set -e
 
 if [[ -z "$BUILD_NUMBER" ]]; then 
     echo "BUILD_NUMBER not set"
