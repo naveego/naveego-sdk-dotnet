@@ -22,16 +22,7 @@ jobs:
       uses: einaregilsson/build-number@v1
       with:
         token: ${{secrets.github_token}}
-        
-    - name: Install Protoc
-      uses: Arduino/actions/setup-protoc@master
-    
-    - name: Generate Publisher from ProtoBuf
-      run: |
-        cp ../dataflow-contracts/plugins/publisher.proto ./
-        echo 'option csharp_namespace = "Naveego.Plugin.Sdk";' >> publisher.proto
-        protoc -I=./ --csharp_out=src --csharp_opt=file_extension=.g.cs publisher.proto 
-               
+                
     - name: Build with dotnet
       run: ./build.sh
                 
