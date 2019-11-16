@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-set -e
 
 if [[ -z "$BUILD_NUMBER" ]]; then 
     echo "BUILD_NUMBER not set"
@@ -57,3 +56,5 @@ else
 fi
 
 echo "Successfully Build Plugin SDK ($versionNumber)"
+
+exit $?
