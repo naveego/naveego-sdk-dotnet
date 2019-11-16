@@ -22,7 +22,12 @@ jobs:
       uses: einaregilsson/build-number@v1
       with:
         token: ${{secrets.github_token}}
-                
+        
+    - name: Generate Publisher from ProtoBuf
+      run: |
+        cp ../dataflow-contracts/plugins/publisher.proto ./
+        echo 'option csharp_namespace = "Naveego.Plugin.Sdk";' >> publisher.proto
+        
     - name: Build with dotnet
       run: ./build.sh
                 
