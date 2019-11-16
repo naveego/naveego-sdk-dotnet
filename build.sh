@@ -59,4 +59,4 @@ status=$?
 
 echo "Successfully Build Plugin SDK ($versionNumber)"
 
-exit status
+[[ ${status} -eq 0 ]]  || exit 1
