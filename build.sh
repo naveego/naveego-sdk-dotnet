@@ -55,6 +55,8 @@ else
         ./src/Naveego.Plugin.Sdk.sln
 fi
 
+status=$?
+
 echo "Successfully Build Plugin SDK ($versionNumber)"
 
-exit $?
+exit status
