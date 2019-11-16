@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -ex
+
 if [[ -z "$BUILD_NUMBER" ]]; then 
     echo "BUILD_NUMBER not set"
     echo "You must set the BUILD_NUMBER environment variable to use this script"
