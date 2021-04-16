@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Grpc.Core;
 using Grpc.Core.Testing;
-using Pub;
+using Naveego.Sdk.Plugins;
 
 namespace Naveego.Sdk.Testing
 {

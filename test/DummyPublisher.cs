@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 using Grpc.Core;
-using Pub;
+using Naveego.Sdk.Plugins;
 
 namespace Naveego.Sdk.TestConsole
 {
