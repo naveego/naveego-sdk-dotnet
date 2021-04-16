@@ -47,7 +47,7 @@ else
         -p:VersionPrefix="${MAJOR}.${MINOR}.${PATCH}" \
         -p:VersionSuffix="${SPECIAL:1}.${buildNumber}" \
         -p:InformationalVersion="${versionNumber}" \
-        ./src/Naveego.Sdk.sln
+        ./Naveego.Sdk.sln
 fi
 
 status=$?
