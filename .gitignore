@@ -317,5 +317,3 @@ obj/
 **/.idea/**/*.iml
 **/.idea/**/contentModel.xml
 **/.idea/**/modules.xml
-
-*.proto
