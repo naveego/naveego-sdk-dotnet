@@ -35,7 +35,9 @@ namespace Naveego.Sdk.Logging
                             $"{logPath}/{_fileName}",
                             rollingInterval: RollingInterval.Day,
                             shared: true,
-                            rollOnFileSizeLimit: true
+                            rollOnFileSizeLimit: true,
+                            fileSizeLimitBytes: 1000000,
+                            retainedFileCountLimit: 10
                         );
                         sinkConfig.StdErrSink();
                     })
