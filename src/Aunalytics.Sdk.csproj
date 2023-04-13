@@ -1,10 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netcoreapp3.0</TargetFramework>
-         <PackageId>Naveego.Sdk</PackageId>
-         <Authors>Derek Smith</Authors>
-         <Company>Naveego</Company>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+         <PackageId>Aunalytics.Sdk</PackageId>
+         <Authors>Aunalytics</Authors>
+         <Company>Aunalytics</Company>
     </PropertyGroup>
 
     <ItemGroup>

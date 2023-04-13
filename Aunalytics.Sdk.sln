@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naveego.Sdk", "src\Naveego.Sdk.csproj", "{EAE8DE4E-5386-4067-B1C4-7D39379675A2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aunalytics.Sdk", "src\Aunalytics.Sdk.csproj", "{EAE8DE4E-5386-4067-B1C4-7D39379675A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naveego.Sdk.TestConsole", "test\Naveego.Sdk.TestConsole.csproj", "{0AE10791-61CD-4EFA-B70E-434ED5E9B763}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aunalytics.Sdk.TestConsole", "test\Aunalytics.Sdk.TestConsole.csproj", "{0AE10791-61CD-4EFA-B70E-434ED5E9B763}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

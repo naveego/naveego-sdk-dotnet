@@ -4,9 +4,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using Grpc.Core;
 using Grpc.Core.Testing;
-using Naveego.Sdk.Plugins;
+using Aunalytics.Sdk.Plugins;
 
-namespace Naveego.Sdk.Testing
+namespace Aunalytics.Sdk.Testing
 {
     public class RunReadJobScenario : IPluginTestScenario
     {

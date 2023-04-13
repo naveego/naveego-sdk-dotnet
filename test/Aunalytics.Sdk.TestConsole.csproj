@@ -6,7 +6,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\src\Naveego.Sdk.csproj" />
+      <ProjectReference Include="..\src\Aunalytics.Sdk.csproj" />
     </ItemGroup>
 
 </Project>

@@ -1,8 +1,7 @@
-﻿using System;
-using System.Threading.Tasks;
-using Naveego.Sdk.Testing;
+﻿using System.Threading.Tasks;
+using Aunalytics.Sdk.Testing;
 
-namespace Naveego.Sdk.TestConsole
+namespace Aunalytics.Sdk.TestConsole
 {
     class Program
     {

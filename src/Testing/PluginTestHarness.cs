@@ -1,5 +1,5 @@
 
-namespace Naveego.Sdk.Testing
+namespace Aunalytics.Sdk.Testing
 {
     public class PluginTestHarness
     {
