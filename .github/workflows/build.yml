@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v1
     - uses: actions/checkout@v1
@@ -33,14 +33,14 @@ jobs:
         path: bin
       
   publish:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     needs: build
     if: github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master'
     steps:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.0.100
+        dotnet-version: 3.1.100
         
     - name: Download Artifacts
       uses: actions/download-artifact@v1
