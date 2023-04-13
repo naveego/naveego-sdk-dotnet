@@ -38,7 +38,7 @@ if [[ -z "$SPECIAL" ]]; then
     dotnet pack --configuration Release -o ./bin \
         -p:Version="${MAJOR}.${MINOR}.${PATCH}" \
         -p:InformationalVersion="${versionNumber} (${buildDate})" \
-        ./Naveego.Sdk.sln
+        ./Aunalytics.Sdk.sln
          
 else 
     versionNumber="${MAJOR}.${MINOR}.${PATCH}${SPECIAL}.${buildNumber}+${buildDate}"
@@ -47,7 +47,7 @@ else
         -p:VersionPrefix="${MAJOR}.${MINOR}.${PATCH}" \
         -p:VersionSuffix="${SPECIAL:1}.${buildNumber}" \
         -p:InformationalVersion="${versionNumber}" \
-        ./Naveego.Sdk.sln
+        ./Aunalytics.Sdk.sln
 fi
 
 status=$?

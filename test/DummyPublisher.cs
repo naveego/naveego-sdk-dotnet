@@ -1,8 +1,8 @@
 using System.Threading.Tasks;
+using Aunalytics.Sdk.Plugins;
 using Grpc.Core;
-using Naveego.Sdk.Plugins;
 
-namespace Naveego.Sdk.TestConsole
+namespace Aunalytics.Sdk.TestConsole
 {
     public class DummyPublisher : Publisher.PublisherBase
     {

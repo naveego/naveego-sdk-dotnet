@@ -1,7 +1,6 @@
-using System.Threading;
 using System.Threading.Tasks;
 
-namespace Naveego.Sdk.Testing
+namespace Aunalytics.Sdk.Testing
 {
     public interface IPluginTestScenario
     {

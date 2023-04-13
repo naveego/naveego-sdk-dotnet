@@ -4,7 +4,7 @@ using Serilog.Configuration;
 using Serilog.Core;
 using Serilog.Events;
 
-namespace Naveego.Sdk.Logging
+namespace Aunalytics.Sdk.Logging
 {
     internal class StdErrSink : ILogEventSink
     {

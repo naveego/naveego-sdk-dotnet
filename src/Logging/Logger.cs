@@ -1,10 +1,10 @@
 using System;
 using System.IO;
 using Grpc.Core;
-using Naveego.Sdk.Plugins;
 using Serilog;
+using Aunalytics.Sdk.Plugins;
 
-namespace Naveego.Sdk.Logging
+namespace Aunalytics.Sdk.Logging
 {
     public static class Logger
     {

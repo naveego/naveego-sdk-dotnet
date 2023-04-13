@@ -1,8 +1,8 @@
 using System.Threading.Tasks;
 using Grpc.Core;
-using Naveego.Sdk.Plugins;
+using Aunalytics.Sdk.Plugins;
 
-namespace Naveego.Sdk.Testing
+namespace Aunalytics.Sdk.Testing
 {
     public class TestServerRecordStreamWriter : IServerStreamWriter<Record>
     {
